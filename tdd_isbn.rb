@@ -19,7 +19,7 @@ class My_test < Minitest::Test
     assert_equal("invalid", check_ten("hello"))
   end
 
-  def test_10_random_numbers
+  def test_10_random_numbers_ten_index_long
     assert_equal("invalid", check_ten(1234567890))
   end
 
@@ -41,6 +41,10 @@ class My_test < Minitest::Test
 
   def test_thirteen_string
     assert_equal("invalid", check_thirteen("hello"))
+  end
+
+  def test_thirteen_with_random_numbers_thirteen_index_long
+    assert_equal("invalid", check_thirteen("1234567890123"))
   end
 
 end
