@@ -27,8 +27,20 @@ class My_test < Minitest::Test
     assert_equal("valid", check_ten("0-321-14653-0"))
   end
 
-  def test_for_x_check_number
+  def test_for_x_check_number_ten
     assert_equal("valid", check_ten("877195869x"))
+  end
+
+  def test_ten_more
+    assert_equal("invalid", check_ten(1123333))
+  end
+
+  def test_more_ten
+    assert_equal("invalid", check_ten(1))
+  end
+
+  def test_ten
+    assert_equal("invalid", check_ten(1233451245123451234))
   end
 
   def test_thirteen
@@ -50,5 +62,14 @@ class My_test < Minitest::Test
   def test_thirteen_more_valid
     assert_equal("valid", check_thirteen("978-0-13-149505-0"))
   end
+
+  def test_thirteen_moreeee
+    assert_equal("valid", check_thirteen("978 0 471 48648 0"))
+  end
+
+  def test_thirteen_random
+    assert_equal("invalid", check_thirteen("asdkwo1234555"))
+  end
+
 
 end

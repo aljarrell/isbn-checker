@@ -21,7 +21,7 @@ end
 
 
 def check_thirteen(number)
-  number = number.to_s.tr("a-w", "").tr("y-z", "").gsub("-", "").gsub(" ", "").each_char.to_a
+  number = number.to_s.tr("a-z", "").gsub("-", "").gsub(" ", "").each_char.to_a
     if number.length == 13
       check_number = number.pop
       check_number = check_number.to_i
@@ -30,7 +30,7 @@ def check_thirteen(number)
           num = num.to_i
           if index.odd?
             total += (num * 3)
-          elsif index.even?
+          elsif index.even? #index position 0 is an even number
             total += (num * 1)
           end
         end
