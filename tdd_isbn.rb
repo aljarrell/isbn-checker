@@ -11,5 +11,9 @@ class My_test < Minitest::Test
     assert_equal("valid", check_ten("0471958697"))
   end
 
+  def test_false
+    assert_equal("invalid", check_ten(111111111111111))
+  end
+
 
 end
