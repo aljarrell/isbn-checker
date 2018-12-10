@@ -47,4 +47,8 @@ class My_test < Minitest::Test
     assert_equal("invalid", check_thirteen("1234567890123"))
   end
 
+  def test_thirteen_more_valid
+    assert_equal("valid", check_thirteen("978-0-13-149505-0"))
+  end
+
 end

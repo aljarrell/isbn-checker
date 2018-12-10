@@ -23,8 +23,25 @@ end
 def check_thirteen(number)
   number = number.to_s.tr("a-w", "").tr("y-z", "").gsub("-", "").gsub(" ", "").each_char.to_a
     if number.length == 13
-      return "valid"
+      check_number = number.pop
+      check_number = check_number.to_i
+      total = 0
+        number.each_with_index do |num, index|
+          num = num.to_i
+          if index.odd?
+            total += (num * 3)
+          elsif index.even?
+            total += (num * 1)
+          end
+        end
+      final_calc = (10 - (total % 10)) % 10
+      #p "this is FINAL CALC #{final_calc}"
+        if final_calc == check_number
+          return "valid"
+        else
+          return "invalid"
+        end
     else
       return "invalid"
-    end 
+    end
 end
