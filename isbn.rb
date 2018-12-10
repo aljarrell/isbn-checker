@@ -18,3 +18,13 @@ def check_ten(number)
     return "invalid"
   end
 end
+
+
+def check_thirteen(number)
+  number = number.to_s.tr("a-w", "").tr("y-z", "").gsub("-", "").gsub(" ", "").each_char.to_a
+    if number.length == 13
+      return "valid"
+    else
+      return "invalid"
+    end 
+end
