@@ -35,4 +35,12 @@ class My_test < Minitest::Test
     assert_equal("valid", check_thirteen("9780470059029"))
   end
 
+  def test_thirteen_invalid_integer
+    assert_equal("invalid", check_thirteen(1))
+  end
+
+  def test_thirteen_string
+    assert_equal("invalid", check_thirteen("hello"))
+  end
+
 end
