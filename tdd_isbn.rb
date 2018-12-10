@@ -7,7 +7,9 @@ class My_test < Minitest::Test
     assert_equal(1,1)
   end
 
-
+  def test_valid_ten
+    assert_equal("valid", check_ten("0471958697"))
+  end
 
 
 end
