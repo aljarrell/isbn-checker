@@ -1,0 +1,11 @@
+body {
+  background-color: red;
+  font-family: 'Righteous', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.5em;
+  color: black;
+  margin: auto;
+  padding: 0;
+  letter-spacing: 2px;
+}
