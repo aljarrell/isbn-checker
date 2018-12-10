@@ -23,4 +23,12 @@ class My_test < Minitest::Test
     assert_equal("invalid", check_ten(1234567890))
   end
 
+  def test_more_valid_with_hyphens
+    assert_equal("valid", check_ten("0-321-14653-0"))
+  end
+
+  def test_for_x_check_number
+    assert_equal("valid", check_ten("877195869x"))
+  end
+
 end
