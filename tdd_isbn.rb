@@ -19,5 +19,8 @@ class My_test < Minitest::Test
     assert_equal("invalid", check_ten("hello"))
   end
 
+  def test_10_random_numbers
+    assert_equal("invalid", check_ten(1234567890))
+  end
 
 end
