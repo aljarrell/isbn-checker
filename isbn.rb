@@ -10,12 +10,12 @@ def check_ten(number)
       total += (index + 1) * num.to_i #through each iteration it bumps up the index number and multiplies it to the number at that index and adds that to the total
     end
       if (total % 11) == check_number
-        return "valid"
+        return "Valid"
       else
-        return "invalid"
+        return "Invalid"
       end
   else
-    return "invalid"
+    return "Invalid"
   end
 end
 
@@ -37,11 +37,11 @@ def check_thirteen(number)
       final_calc = (10 - (total % 10)) % 10
       #p "this is FINAL CALC #{final_calc}"
         if final_calc == check_number
-          return "valid"
+          return "Valid"
         else
-          return "invalid"
+          return "Invalid"
         end
     else
-      return "invalid"
+      return "Invalid"
     end
 end
