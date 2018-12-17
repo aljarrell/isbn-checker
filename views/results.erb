@@ -5,5 +5,15 @@ Your number was: <%= isbn.join("") %><br><br>
 <p>Invalid</p>
 <% end %>
 
+<hr>
+
+CSV File Validity <br><br>
+<ul class="list">
+<% read.split(", ").each_slice(2).each do |item| %>
+  <li><%= item[0]%> is <%= item[1]%></li>
+<% end %>
+</ul>
+<br>
 
 <input id="buttons" type = "button" value = "Check Another Number" onClick = "location.href='/'">
+<input type="hidden" name="csv_file" value="<%= read %>">

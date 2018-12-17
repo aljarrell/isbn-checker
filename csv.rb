@@ -6,20 +6,18 @@ def update_csv(file)
   isbn = CSV.read(file, 'r', headers:true)
     isbn.each do |row|
       new = row[1].to_s.tr("a-w", "").tr("y-z", "").gsub("-", "").gsub(" ", "")
-      puts "THIS IS NEW #{new}"
+      #puts "THIS IS NEW #{new}"
       if new.length == 10
         updated_isbn.push([row[1], check_ten(new)])
-        p "this is UPDATED ISBN TEN #{row}"
-      else 
+        #p "this is UPDATED ISBN TEN #{row}"
+      else
         updated_isbn.push([row[1], check_thirteen(new)])
-        p "this is UPDATED ISBN THIRTEEN "
+        #p "this is UPDATED ISBN THIRTEEN "
       end
     end
-      CSV.open("isbn_rewrite.csv", "w") do |new_file|
+      CSV.open("isbn_rewrite.csv", "w") do |new_row|
         updated_isbn.each do |item|
-          new_file << item
+          new_row << item
         end
       end
 end
-
-update_csv("isbn.csv")

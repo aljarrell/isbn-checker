@@ -9,20 +9,20 @@ end
 
 post '/home' do
   isbn = params[:isbn]
-  #p "ISBN LENGTH #{isbn.to_s.upcase.tr("a-w", "").tr("y-z", "").tr('"', '').gsub("-", "").gsub(" ", "").each_char.to_a.length}"
-  redirect 'results?isbn=' + isbn
+  csv_file = params[:csv_file]
+  read = update_csv(csv_file).join(", ")
+  redirect 'results?isbn=' + isbn + '&read=' + read
 end
 
 get '/results' do
   isbn = params[:isbn]
+  read = params[:read]
   isbn = isbn.upcase.tr("a-w", "").tr("y-z", "").tr('"', '').gsub("-", "").gsub(" ", "").each_char.to_a
-  #p "ISBN #{isbn}"
+  #p "CSV FILE #{csv_file}"
   if isbn.length == 10
     result = check_ten(isbn.join(""))
-    #p "this TEN RESULT #{result}"
-  elsif isbn.length == 13
+  else
     result = check_thirteen(isbn.join(""))
-    #p "this is THIRTEEN RESULT #{result}"
   end
-  erb :results, locals: {isbn: isbn, result: result}
+  erb :results, locals: {isbn: isbn, result: result, read: read}
 end
