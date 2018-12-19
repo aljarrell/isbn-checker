@@ -1,10 +1,17 @@
+html {
+  background: url('/img/books.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
 body {
-  background-color: red;
   font-family: 'Righteous', sans-serif;
   font-weight: bold;
   text-align: center;
   font-size: 1.5em;
-  color: black;
+  color: yellow;
+  text-shadow: 2px 2px black;
   margin: auto;
   padding: 0;
   letter-spacing: 2px;
@@ -13,4 +20,40 @@ body {
 ul {
   text-align: center;
   list-style-position: inside;
+}
+
+hr {
+  border: 0.5em solid white;
+  border-radius: 50%;
+}
+
+input {
+  font-family: 'Righteous', sans-serif;
+  border-radius: 2em;
+  cursor: pointer;
+  padding: 0.5em 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#buttons {
+  font-family: 'Righteous', sans-serif;
+  border-radius: 2em;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+#files {
+  font-family: 'Righteous', sans-serif;
+  text-align: center;
+  border-radius: 2em;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
