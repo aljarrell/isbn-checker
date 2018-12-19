@@ -16,6 +16,7 @@ def update_csv(file)
       end
     end
       CSV.open("isbn_rewrite.csv", "w") do |new_row|
+        new_row << ["ISBN", "VALIDITY"]
         updated_isbn.each do |item|
           new_row << item
         end
